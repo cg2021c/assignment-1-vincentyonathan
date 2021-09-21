@@ -7,13 +7,13 @@
 
 ## Item's Name : Mouse
 ### Top Right
-![topright](./screenshot/topright.JPG)
+![topright](./screenshot/topright.jpg)
 
 ### Top Left
-![topleft](./screenshot/topleft.JPG)
+![topleft](./screenshot/topleft.jpg)
 
 ### Top
-![top](./screenshot/top.JPG)
+![top](./screenshot/top.jpg)
 
 ### Top Rear
-![toprear](./screenshot/toprear.JPG)
+![toprear](./screenshot/toprear.jpg)
