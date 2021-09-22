@@ -5,7 +5,7 @@
 * Vincent Yonathan    - 05111940000186
 ---
 
-## Item's Name : Mouse
+## Item's Name : Camera
 ### Top Right
 ![topright](./screenshot/topright.jpg)
 
