@@ -7,14 +7,14 @@
 
 ## Item's Name : Camera
 ### Top Right
-![topright](./screenshot/topright.jpg)
+![topright](./screenshot/toprightc.jpg)
 
 ### Top Left
-![topleft](./screenshot/topleft.jpg)
+![topleft](./screenshot/topleftc.jpg)
 
 ### Top
 <!-- ![top](./screenshot/top.jpg) -->
-![top](./screenshot/top1.jpg)
+![top](./screenshot/top.jpg)
 
 ### Top Rear
-![toprear](./screenshot/toprear.jpg)
+![toprear](./screenshot/toprearc.jpg)
