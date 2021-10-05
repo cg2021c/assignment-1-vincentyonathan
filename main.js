@@ -1,7 +1,7 @@
 function main() {
     // Access the canvas through DOM: Document Object Model
-    var canvas = document.getElementById('myCanvas');   // The paper
-    var gl = canvas.getContext('webgl');                // The brush and the paints
+    var canvas = document.getElementById('myCanvas');  
+    var gl = canvas.getContext('webgl');                
 
     var vertices = [
         //Background Right
@@ -601,7 +601,6 @@ function main() {
         -0.74178, 0.36589, 0.1, 0.1, 0.1,
     ];
 
-    // Create a linked-list for storing the vertices data
     var buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
@@ -610,9 +609,8 @@ function main() {
         attribute vec2 aPosition;
         attribute vec3 aColor;
         varying vec3 vColor;
-        uniform float uChange;
         void main() {
-            gl_Position = vec4(aPosition + uChange, 0.0, 1.0);
+            gl_Position = vec4(aPosition, 0.0, 1.0);
             vColor = aColor;
         }
     `;
@@ -625,32 +623,22 @@ function main() {
         }
     `;
 
-    // Create .c in GPU
     var vertexShader = gl.createShader(gl.VERTEX_SHADER);
     gl.shaderSource(vertexShader, vertexShaderSource);
     var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
     gl.shaderSource(fragmentShader, fragmentShaderSource);
 
-    // Compile .c into .o
     gl.compileShader(vertexShader);
     gl.compileShader(fragmentShader);
 
-    // Prepare a .exe shell (shader program)
     var shaderProgram = gl.createProgram();
 
-    // Put the two .o files into the shell
     gl.attachShader(shaderProgram, vertexShader);
     gl.attachShader(shaderProgram, fragmentShader);
 
-    // Link the two .o files, so together they can be a runnable program/context.
     gl.linkProgram(shaderProgram);
-
-    // Start using the context (analogy: start using the paints and the brushes)
     gl.useProgram(shaderProgram);
 
-    // Teach the computer how to collect
-    //  the positional values from ARRAY_BUFFER
-    //  to each vertex being processed
     var aPosition = gl.getAttribLocation(shaderProgram, "aPosition");
     gl.vertexAttribPointer(
         aPosition, 
@@ -672,45 +660,32 @@ function main() {
     );
     gl.enableVertexAttribArray(aColor);
 
-    // Interactive graphics with mouse
-    var freeze = false;
-    function onMouseClick(event) {
-        freeze = !freeze;
-    }
-    document.addEventListener("click", onMouseClick);
-    // Interactive graphics with keyboard
-    function onKeydown(event) {
-        if (event.keyCode == 32)
-        {
-            freeze = true;
-        }
-    }
-    function onKeyup(event)
-    {
-        if(event.keyCode == 32)
-        {
-            freeze = false;
-        }
-    }
-    document.addEventListener("keydown", onKeydown);
-    document.addEventListener("keyup", onKeyup);
-    var speedRaw = 1;
-    var speed = speedRaw / 600;
+   
+    var speed = 0.0186;
     var change = 0;
-    var uChange = gl.getUniformLocation(shaderProgram, "uChange");
-    function render() {
-        if (!freeze) {  // If it is not freezing, then animate the rectangle
-            if (change >= 0.5 || change <= -0.5) speed = -speed;
-            change = change + speed;
-            gl.uniform1f(uChange, change);
+    function render() 
+    {
+        for (let i = 1; i < vertices.length; i += 5) {
+          if (vertices[i] > 1 || vertices[i] < -1) {
+            speed = speed * -1;
+            break;
+          }
         }
+        for (let i = 1; i < vertices.length; i += 5) 
+        {
+          if (vertices[i - 1] > 0) 
+          {
+            vertices[i] = vertices[i] + speed;
+          }
+        }
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
         gl.clearColor(0.0, 0.0, 0.0, 0.2);
         gl.clear(gl.COLOR_BUFFER_BIT);
         var primitive = gl.TRIANGLES;
         var offset = 0;
         var nVertex = vertices.length;
         gl.drawArrays(primitive, offset, nVertex);
-        // requestAnimationFrame(render);
+        requestAnimationFrame(render);
     }
     requestAnimationFrame(render);
 }
