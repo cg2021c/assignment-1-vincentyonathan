@@ -978,7 +978,7 @@ let uAmbientConstant = gl.getUniformLocation(program, "uAmbientConstant");
 let uAmbientIntensity = gl.getUniformLocation(program, "uAmbientIntensity");
 // gl.uniform3fv(uAmbientConstant, [1.0, 0.5, 0.0]);    // orange light
 gl.uniform3fv(uAmbientConstant, [1.0, 1.0, 1.0]);       // white light
-gl.uniform1f(uAmbientIntensity, 1); // 20% of light
+gl.uniform1f(uAmbientIntensity, 0.386); // 20% of light
 
 // DIFFUSE
 let uDiffuseConstant = gl.getUniformLocation(program, "uDiffuseConstant");
