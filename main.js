@@ -10,23 +10,23 @@ function randomColor() {
 }
 
 
-let vertexData = [
+let vertexDataMetal = [
 //Sebelah Kanan
-     //Body Utama - Hitam
-     0.256, 0.180, -0.358,  0, 0, 0 , 0, 0, -1,
-     0.256, -0.234, -0.358, 0, 0, 0 , 0, 0, -1,
-     0.908, -0.234, -0.358, 0, 0, 0 , 0, 0, -1,
-     0.908, -0.234, -0.358, 0, 0, 0 , 0, 0, -1,
-     0.908, 0.180, -0.358,  0, 0, 0 , 0, 0, -1,
-     0.256, 0.180, -0.358,  0, 0, 0 , 0, 0, -1,
+    //Body Utama - Hitam
+    0.256, 0.180, -0.358,  0, 0, 0 , 0, 0, -1,
+    0.256, -0.234, -0.358, 0, 0, 0 , 0, 0, -1,
+    0.908, -0.234, -0.358, 0, 0, 0 , 0, 0, -1,
+    0.908, -0.234, -0.358, 0, 0, 0 , 0, 0, -1,
+    0.908, 0.180, -0.358,  0, 0, 0 , 0, 0, -1,
+    0.256, 0.180, -0.358,  0, 0, 0 , 0, 0, -1,
 
-     //Body Utama- Kiri
-     0.256, 0.180, -0.358,  0, 0, 0 , -1, 0, 0,
-     0.256, -0.234, -0.358, 0, 0, 0 , -1, 0, 0,
-     0.256, -0.234, -0.500, 0, 0, 0 , -1, 0, 0,
-     0.256, -0.234, -0.500, 0, 0, 0 , -1, 0, 0,
-     0.256, 0.180, -0.500,  0, 0, 0 , -1, 0, 0,
-     0.256, 0.180, -0.358,  0, 0, 0 , -1, 0, 0,
+    //Body Utama- Kiri
+    0.256, 0.180, -0.358,  0, 0, 0 , -1, 0, 0,
+    0.256, -0.234, -0.358, 0, 0, 0 , -1, 0, 0,
+    0.256, -0.234, -0.500, 0, 0, 0 , -1, 0, 0,
+    0.256, -0.234, -0.500, 0, 0, 0 , -1, 0, 0,
+    0.256, 0.180, -0.500,  0, 0, 0 , -1, 0, 0,
+    0.256, 0.180, -0.358,  0, 0, 0 , -1, 0, 0,
 
     //Body Utama- Kanan
     0.908, 0.180 , -0.358, 0, 0, 0, 1, 0, 0,
@@ -428,23 +428,73 @@ let vertexData = [
     0.555, 0.107,-0.500, 0.2, 0.2, 0.2, 0 , 1 , 0,
     0.555, 0.107,-0.600, 0.2, 0.2, 0.2, 0 , 1 , 0,
 
+    //Kubus ditengah
+    0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
 
-//Sebelah Kiri
-  //Body Utama - Hitam
-     -0.256, 0.180, -0.216,  0, 0, 0 , 0, 0, -1,
-     -0.256, -0.234, -0.216, 0, 0, 0 , 0, 0, -1,
-     -0.908, -0.234, -0.216, 0, 0, 0 , 0, 0, -1,
-     -0.908, -0.234, -0.216, 0, 0, 0 , 0, 0, -1,
-     -0.908, 0.180, -0.216,  0, 0, 0 , 0, 0, -1,
-     -0.256, 0.180, -0.216,  0, 0, 0 , 0, 0, -1,
+    // // Left
+    -0.05, 0.05, -0.358, 1, 1, 1, 1, 0 ,0,
+    -0.05, -0.05, -0.358, 1, 1, 1, 1, 0 ,0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 1, 0 ,0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 1, 0 ,0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 1, 0 ,0,
+    -0.05, -0.05, -0.358, 1, 1, 1, 1, 0 ,0,
 
-     //Body Utama- Kiri
-     -0.256, 0.180, -0.216,  0, 0, 0 , -1, 0, 0,
-     -0.256, -0.234, -0.216, 0, 0, 0 , -1, 0, 0,
-     -0.256, -0.234, -0.358, 0, 0, 0 , -1, 0, 0,
-     -0.256, -0.234, -0.358, 0, 0, 0 , -1, 0, 0,
-     -0.256, 0.180, -0.358,  0, 0, 0 , -1, 0, 0,
-     -0.256, 0.180, -0.216,  0, 0, 0 , -1, 0, 0,
+    // // Back
+    -0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+
+    // Right
+    0.05, 0.05, -0.358, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, -1, 0, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, -1, 0, 0,
+
+    // up
+    0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+
+    // Bottom
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+
+];
+
+vertexData = [
+    //Sebelah Kiri
+    //Body Utama - Hitam
+    -0.256, 0.180, -0.216,  0, 0, 0 , 0, 0, -1,
+    -0.256, -0.234, -0.216, 0, 0, 0 , 0, 0, -1,
+    -0.908, -0.234, -0.216, 0, 0, 0 , 0, 0, -1,
+    -0.908, -0.234, -0.216, 0, 0, 0 , 0, 0, -1,
+    -0.908, 0.180, -0.216,  0, 0, 0 , 0, 0, -1,
+    -0.256, 0.180, -0.216,  0, 0, 0 , 0, 0, -1,
+
+    //Body Utama- Kiri
+    -0.256, 0.180, -0.216,  0, 0, 0 , -1, 0, 0,
+    -0.256, -0.234, -0.216, 0, 0, 0 , -1, 0, 0,
+    -0.256, -0.234, -0.358, 0, 0, 0 , -1, 0, 0,
+    -0.256, -0.234, -0.358, 0, 0, 0 , -1, 0, 0,
+    -0.256, 0.180, -0.358,  0, 0, 0 , -1, 0, 0,
+    -0.256, 0.180, -0.216,  0, 0, 0 , -1, 0, 0,
 
     //Body Utama- Kanan
     -0.908, 0.180 , -0.216, 0, 0, 0, 1, 0, 0,
@@ -478,7 +528,7 @@ let vertexData = [
     -0.908, 0.180, -0.358, 0, 0, 0, 0, 0, -1,
     -0.256, 0.180, -0.358, 0, 0, 0, 0, 0, -1,
 
-  //Bagian Putih
+    //Bagian Putih
     //Right - Back Facing
     -0.313, 0.152, -0.359 , 1, 1, 1, 0 , 0, -1,
     -0.313, -0.206 ,-0.359 , 1, 1, 1, 0 , 0, -1,
@@ -496,38 +546,38 @@ let vertexData = [
     -0.313,  0.152  ,-0.359 ,1, 1, 1, -1 , 0, 0,
 
     //Samping Kanan
-     -0.870, 0.152,-0.400 , 1, 1, 1, 1, 0, 0,
-     -0.870,  -0.206 ,-0.400, 1, 1, 1, 1, 0, 0,
-     -0.871, -0.206 ,-0.319, 1, 1, 1, 1, 0, 0,
-     -0.871, -0.206 ,-0.319, 1, 1, 1, 1, 0, 0,
-     -0.871, 0.152 ,-0.319, 1, 1, 1, 1, 0, 0,
-     -0.870, 0.152 ,-0.400, 1, 1, 1, 1, 0, 0,
+      -0.870, 0.152,-0.400 , 1, 1, 1, 1, 0, 0,
+      -0.870,  -0.206 ,-0.400, 1, 1, 1, 1, 0, 0,
+      -0.871, -0.206 ,-0.319, 1, 1, 1, 1, 0, 0,
+      -0.871, -0.206 ,-0.319, 1, 1, 1, 1, 0, 0,
+      -0.871, 0.152 ,-0.319, 1, 1, 1, 1, 0, 0,
+      -0.870, 0.152 ,-0.400, 1, 1, 1, 1, 0, 0,
     
-     //Tutup Atas
-     -0.313, 0.152 ,-0.359, 1, 1, 1 , 1, 1, 0,
-     -0.870, 0.152 ,-0.400, 1, 1, 1 , 1, 1, 0,
-     -0.870, 0.152 ,-0.319, 1, 1, 1 , 1, 1, 0,
-     -0.870, 0.152 ,-0.319, 1, 1, 1 , 1, 1, 0,
-     -0.313, 0.152 ,-0.360, 1, 1, 1 , 1, 1, 0,
-     -0.313, 0.152 ,-0.359, 1, 1, 1 , 1, 1, 0,
+      //Tutup Atas
+      -0.313, 0.152 ,-0.359, 1, 1, 1 , 1, 1, 0,
+      -0.870, 0.152 ,-0.400, 1, 1, 1 , 1, 1, 0,
+      -0.870, 0.152 ,-0.319, 1, 1, 1 , 1, 1, 0,
+      -0.870, 0.152 ,-0.319, 1, 1, 1 , 1, 1, 0,
+      -0.313, 0.152 ,-0.360, 1, 1, 1 , 1, 1, 0,
+      -0.313, 0.152 ,-0.359, 1, 1, 1 , 1, 1, 0,
 
-     //Tutup Bawah
-     -0.313, -0.206, -0.359, 1, 1, 1 , 0, -1, 0,
-     -0.313, -0.206, -0.360, 1, 1, 1 , 0, -1, 0,
-     -0.871, -0.206, -0.319, 1, 1, 1 , 0, -1, 0,
-     -0.871, -0.206, -0.319, 1, 1, 1 , 0, -1, 0,
-     -0.870, -0.206, -0.400, 1, 1, 1 , 0, -1, 0,
-     -0.313, -0.206, -0.359, 1, 1, 1 , 0, -1, 0,
+      //Tutup Bawah
+      -0.313, -0.206, -0.359, 1, 1, 1 , 0, -1, 0,
+      -0.313, -0.206, -0.360, 1, 1, 1 , 0, -1, 0,
+      -0.871, -0.206, -0.319, 1, 1, 1 , 0, -1, 0,
+      -0.871, -0.206, -0.319, 1, 1, 1 , 0, -1, 0,
+      -0.870, -0.206, -0.400, 1, 1, 1 , 0, -1, 0,
+      -0.313, -0.206, -0.359, 1, 1, 1 , 0, -1, 0,
 
-     //Tutup Belakang
-     -0.871,  0.152, -0.319, 1, 1, 1, 0, 0, 1,
-     -0.871, -0.206, -0.319, 1, 1, 1, 0, 0, 1,
-     -0.313, -0.206, -0.360, 1, 1, 1, 0, 0, 1,
-     -0.313, -0.206, -0.360, 1, 1, 1, 0, 0, 1,
-     -0.313,  0.152, -0.360, 1, 1, 1, 0, 0, 1,
-     -0.871,  0.152, -0.319, 1, 1, 1, 0, 0, 1,
+      //Tutup Belakang
+      -0.871,  0.152, -0.319, 1, 1, 1, 0, 0, 1,
+      -0.871, -0.206, -0.319, 1, 1, 1, 0, 0, 1,
+      -0.313, -0.206, -0.360, 1, 1, 1, 0, 0, 1,
+      -0.313, -0.206, -0.360, 1, 1, 1, 0, 0, 1,
+      -0.313,  0.152, -0.360, 1, 1, 1, 0, 0, 1,
+      -0.871,  0.152, -0.319, 1, 1, 1, 0, 0, 1,
 
-     //Tabung Lensa
+    //Tabung Lensa
     //Titik Tengah
     -0.524, 0.110, -0.115, 1, 1, 1 ,0 ,0, -1,
     -0.400, -0.0305, -0.115, 1, 1, 1, 0, 0, -1,
@@ -598,7 +648,7 @@ let vertexData = [
     -0.400, -0.0305, -0.115, 1, 1, 1, 0, 0, -1,
     -0.678, -0.057, -0.115, 1, 1, 1, 0, 0, -1,
     -0.678, -0.057, -0.115, 1, 1, 1, 0, 0, -1,
-  
+
     
     -0.400, -0.0305, -0.115, 1, 1, 1, 0, 0, -1,
     -0.681, -0.030, -0.115, 1, 1, 1, 0, 0, -1,
@@ -846,11 +896,54 @@ let vertexData = [
     -0.555, 0.107,-0.215, 0.2, 0.2, 0.2, 0 , 1 , 0,
     -0.555, 0.107,-0.115, 0.2, 0.2, 0.2, 0 , 1 , 0,
 
-];
+    //Kubus ditengah
+    0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
 
-const vertexBuffer = gl.createBuffer();
-gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexData), gl.STATIC_DRAW);
+    // // Left
+    -0.05, 0.05, -0.358, 1, 1, 1, 1, 0 ,0,
+    -0.05, -0.05, -0.358, 1, 1, 1, 1, 0 ,0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 1, 0 ,0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 1, 0 ,0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 1, 0 ,0,
+    -0.05, -0.05, -0.358, 1, 1, 1, 1, 0 ,0,
+
+    // // Back
+    -0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+
+    // Right
+    0.05, 0.05, -0.358, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, -1, 0, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, -1, 0, 0,
+
+    // up
+    0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+
+    // Bottom
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+];
 
 const vertexShader = gl.createShader(gl.VERTEX_SHADER);
 gl.shaderSource(
@@ -924,81 +1017,86 @@ gl.shaderSource(
         vec3 phong = ambient + diffuse + specular;
         // Apply the shading
         gl_FragColor = vec4(phong * vColor, 1.);
+        gl_FragColor.w = 0.5;
     }
   `
 );
 gl.compileShader(fragmentShader);
 console.log(gl.getShaderInfoLog(fragmentShader));
 
+const fragmentShaderforMetal = gl.createShader(gl.FRAGMENT_SHADER);
+gl.shaderSource(
+  fragmentShaderforMetal,
+  `
+    precision mediump float;
+    varying vec3 vPosition;
+    varying vec3 vColor;
+    varying vec3 vNormal;
+    uniform vec3 uAmbientConstant;   // Represents the light color
+    uniform float uAmbientIntensity;
+    uniform vec3 uDiffuseConstant;  // Represents the light color
+    uniform vec3 uLightPosition;
+    uniform mat3 uNormalModel;
+    uniform vec3 uSpecularConstant; // Represents the light color
+    uniform vec3 uViewerPosition;
+    void main() {
+        // Calculate the ambient effect
+        vec3 ambient = uAmbientConstant * uAmbientIntensity;
+        // Calculate the diffuse effect
+        vec3 normalizedNormal = normalize(uNormalModel * vNormal);
+        vec3 vLight = uLightPosition - vPosition;
+        vec3 normalizedLight = normalize(vLight);
+        vec3 diffuse = vec3(0., 0., 0.);
+        float cosTheta = max(dot(normalizedNormal, normalizedLight), 0.);
+        
+        // Prepare the specular components
+        vec3 vReflector = 2.0 * cosTheta * vNormal - (vLight);
+        // or using the following expression
+        // vec3 vReflector = reflect(-vLight, vNormal);
+        vec3 vViewer = uViewerPosition - vPosition;
+        vec3 normalizedViewer = normalize(vViewer);
+        vec3 normalizedReflector = normalize(vReflector);
+        float shininessConstant = 100.0;
+        vec3 specular = vec3(0., 0., 0.);
+        float cosPhi = max(dot(normalizedViewer, normalizedReflector), 0.);
+        
+        // Calculate the phong reflection effect
+        if (cosTheta > 0.) {
+            diffuse = uDiffuseConstant * cosTheta;
+        }
+        if (cosPhi > 0.) {
+            specular = uSpecularConstant * pow(cosPhi, shininessConstant);
+        }
+        vec3 phong = ambient + diffuse + specular;
+        // Apply the shading
+        gl_FragColor = vec4(phong * vColor, 1.);
+    }
+  `
+);
+gl.compileShader(fragmentShaderforMetal);
+console.log(gl.getShaderInfoLog(fragmentShaderforMetal));
+
 const program = gl.createProgram();
 gl.attachShader(program, vertexShader);
 gl.attachShader(program, fragmentShader);
-
 gl.linkProgram(program);
 
-const aPosition = gl.getAttribLocation(program, `aPosition`);
-gl.enableVertexAttribArray(aPosition);
-gl.vertexAttribPointer(
-  aPosition,
-  3,
-  gl.FLOAT,
-  false,
-  9 * Float32Array.BYTES_PER_ELEMENT,
-  0
-);
+const programMetal = gl.createProgram();
+gl.attachShader(programMetal, vertexShader)
+gl.attachShader(programMetal, fragmentShaderforMetal);
+gl.linkProgram(programMetal);
 
-const aColor = gl.getAttribLocation(program, `aColor`);
-gl.enableVertexAttribArray(aColor);
-gl.vertexAttribPointer(
-  aColor,
-  3,
-  gl.FLOAT,
-  false,
-  9 * Float32Array.BYTES_PER_ELEMENT,
-  3 * Float32Array.BYTES_PER_ELEMENT
-);
-
-const aNormal = gl.getAttribLocation(program, `aNormal`);
-gl.enableVertexAttribArray(aNormal);
-gl.vertexAttribPointer(
-  aNormal,
-  3,
-  gl.FLOAT,
-  false,
-  9 * Float32Array.BYTES_PER_ELEMENT,
-  6 * Float32Array.BYTES_PER_ELEMENT
-);
-
-gl.useProgram(program);
-gl.enable(gl.DEPTH_TEST);
-
-// Lighting and Shading
-// AMBIENT
-let uAmbientConstant = gl.getUniformLocation(program, "uAmbientConstant");
-let uAmbientIntensity = gl.getUniformLocation(program, "uAmbientIntensity");
-// gl.uniform3fv(uAmbientConstant, [1.0, 0.5, 0.0]);    // orange light
-gl.uniform3fv(uAmbientConstant, [1.0, 1.0, 1.0]);       // white light
-gl.uniform1f(uAmbientIntensity, 0.386); // 20% of light
-
-// DIFFUSE
-let uDiffuseConstant = gl.getUniformLocation(program, "uDiffuseConstant");
-let uLightPosition = gl.getUniformLocation(program, "uLightPosition");
-let uNormalModel = gl.getUniformLocation(program, "uNormalModel");
-gl.uniform3fv(uDiffuseConstant, [1.0, 1.0, 1.0]);   // white light
 let lightX = 0.0;
 let lightY = 0.0;
-let lightZ = 0.0;
-gl.uniform3fv(uLightPosition, [0.5, lightY, lightZ]);  // light position
+let lightZ = -0.404;
 
-let uProjection = gl.getUniformLocation(program, "uProjection");
-let perspectiveMatrix = glMatrix.mat4.create();
-glMatrix.mat4.perspective(perspectiveMatrix, Math.PI / 3, 1.0, 0.5, 10.0);
-gl.uniformMatrix4fv(uProjection, false, perspectiveMatrix);
-
-let cameraX = 0;
+let cameraX = 0.0;
 let cameraY = 0.0;
 let cameraZ = 2.0;
+
+gl.useProgram(program);
 let uView = gl.getUniformLocation(program, "uView");
+let uLightPosition = gl.getUniformLocation(program, "uLightPosition");
 let viewMatrix = glMatrix.mat4.create();
 glMatrix.mat4.lookAt(
   viewMatrix,
@@ -1007,25 +1105,46 @@ glMatrix.mat4.lookAt(
   [0.0, 1.0, 0.0]
 );
 gl.uniformMatrix4fv(uView, false, viewMatrix);
-function onKeydown(event) {
-  if (event.keyCode == 37) cameraX -= 0.02; // Left
-  if (event.keyCode == 39) cameraX += 0.02; // Right
 
-  if (event.keyCode == 38) {
+gl.useProgram(programMetal);
+let uViewMetal = gl.getUniformLocation(programMetal, "uView");
+let uLightPositionMetal = gl.getUniformLocation(programMetal, "uLightPosition");
+let viewMatrixMetal = glMatrix.mat4.create();
+glMatrix.mat4.lookAt(
+  viewMatrixMetal,
+  [cameraX, cameraY, cameraZ],    // the location of the eye or the camera
+  [cameraX, 0.0, -10],        // the point where the camera look at
+  [0.0, 1.0, 0.0]
+);
+gl.uniformMatrix4fv(uViewMetal, false, viewMatrixMetal);
+
+function onKeydown(event) {
+  if (event.keyCode == 65) cameraX -= 0.02; // Left
+  if (event.keyCode == 68) cameraX += 0.02; // Right
+
+  if (event.keyCode == 87) {
     lightY += 0.02; // Up 
     for (let i = 0; i < vertexData.length; i += 9) {
-      if (vertexData[i] <= 0.05 && vertexData[i] >= -0.05 && vertexData[i + 2] <= 0.05 && vertexData[i + 2] >= -0.05) {
+      if (vertexData[i] <= 0.05 && vertexData[i] >= -0.05 && vertexData[i + 2] <= -0.300 && vertexData[i + 2] >= -0.500) {
         vertexData[i + 1] += 0.02;
       }
     }
-    gl.uniform3fv(uLightPosition, [lightX, lightY, lightZ]);  // light position
+    for (let i = 0; i < vertexDataMetal.length; i += 9) {
+      if (vertexDataMetal[i] <= 0.05 && vertexDataMetal[i] >= -0.05 && vertexDataMetal[i + 2] <= -0.300 && vertexDataMetal[i + 2] >= -0.500) {
+        vertexDataMetal[i + 1] += 0.02;
+      }
+    }
   }
-  if (event.keyCode == 40) {
+  if (event.keyCode == 83) {
     lightY -= 0.02; // Down
     for (let i = 0; i < vertexData.length; i += 9) {
-      if (vertexData[i] <= 0.05 && vertexData[i] >= -0.05 && vertexData[i + 2] <= 0.05 && vertexData[i + 2] >= -0.05) {
+      if (vertexData[i] <= 0.05 && vertexData[i] >= -0.05 && vertexData[i + 2] <= -0.300 && vertexData[i + 2] >= -0.500) {
         vertexData[i + 1] -= 0.02;
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexData), gl.STATIC_DRAW);
+      }
+    }
+    for (let i = 0; i < vertexDataMetal.length; i += 9) {
+      if (vertexDataMetal[i] <= 0.05 && vertexDataMetal[i] >= -0.05 && vertexDataMetal[i + 2] <= -0.300 && vertexDataMetal[i + 2] >= -0.500) {
+        vertexDataMetal[i + 1] -= 0.02;
       }
     }
   }
@@ -1036,37 +1155,17 @@ function onKeydown(event) {
     [cameraX, 0.0, -10],        // the point where the camera look at
     [0.0, 1.0, 0.0]
   );
-  gl.uniformMatrix4fv(uView, false, viewMatrix);
-  gl.uniform3fv(uLightPosition, [lightX, lightY, lightZ]);  // light position
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexData), gl.STATIC_DRAW);
+  glMatrix.mat4.lookAt(
+    viewMatrixMetal,
+    [cameraX, cameraY, cameraZ],    // the location of the eye or the camera
+    [cameraX, 0.0, -10],        // the point where the camera look at
+    [0.0, 1.0, 0.0]
+  );
 }
+
+let modelMatrix = glMatrix.mat4.create();
+let modelMatrixMetal = glMatrix.mat4.create();
 
 document.addEventListener("keydown", onKeydown);
 
-// SPECULAR
-var uSpecularConstant = gl.getUniformLocation(program, "uSpecularConstant");
-var uViewerPosition = gl.getUniformLocation(program, "uViewerPosition");
-gl.uniform3fv(uSpecularConstant, [1.0, 1.0, 1.0]);  // white light
-gl.uniform3fv(uViewerPosition, [cameraX, cameraY, cameraZ]);
 
-let uModel = gl.getUniformLocation(program, `uModel`);
-
-let modelMatrix = glMatrix.mat4.create();
-
-function animate() {
-  glMatrix.mat4.rotateY(modelMatrix, modelMatrix, Math.PI / 2 / 70);
-
-  gl.uniformMatrix4fv(uModel, false, modelMatrix);
-
-  let normalModelMatrix = glMatrix.mat3.create();
-  glMatrix.mat3.normalFromMat4(normalModelMatrix, modelMatrix);
-  gl.uniformMatrix3fv(uNormalModel, false, normalModelMatrix);
-
-  gl.enable(gl.DEPTH_TEST);
-  gl.clearColor(0.0, 0.0, 0.0, 0.2);
-  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-  gl.drawArrays(gl.TRIANGLES, 0, vertexData.length / 9);
-  requestAnimationFrame(animate);
-}
-
-animate();
