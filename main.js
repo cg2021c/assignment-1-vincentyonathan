@@ -897,52 +897,52 @@ vertexData = [
     -0.555, 0.107,-0.115, 0.2, 0.2, 0.2, 0 , 1 , 0,
 
     //Kubus ditengah
-    0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
-    0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
-    -0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
-    -0.05, 0.05, -0.450, 1, 1, 1, 0, 0, -1,
-    0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
-    -0.05, -0.05, -0.450, 1, 1, 1, 0, 0, -1,
+    0.05, 0.05, -0.450, 1, 1, 1, 0, 0, 1,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 0, 1,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, 0, 1,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, 0, 1,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 0, 1,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 0, 1,
 
     // // Left
-    -0.05, 0.05, -0.358, 1, 1, 1, 1, 0 ,0,
-    -0.05, -0.05, -0.358, 1, 1, 1, 1, 0 ,0,
-    -0.05, 0.05, -0.450, 1, 1, 1, 1, 0 ,0,
-    -0.05, 0.05, -0.450, 1, 1, 1, 1, 0 ,0,
-    -0.05, -0.05, -0.450, 1, 1, 1, 1, 0 ,0,
-    -0.05, -0.05, -0.358, 1, 1, 1, 1, 0 ,0,
+    -0.05, 0.05, -0.358, 1, 1, 1, -1, 0 ,0,
+    -0.05, -0.05, -0.358, 1, 1, 1, -1, 0 ,0,
+    -0.05, 0.05, -0.450, 1, 1, 1, -1, 0 ,0,
+    -0.05, 0.05, -0.450, 1, 1, 1, -1, 0 ,0,
+    -0.05, -0.05, -0.450, 1, 1, 1, -1, 0 ,0,
+    -0.05, -0.05, -0.358, 1, 1, 1, -1, 0 ,0,
 
     // // Back
-    -0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
-    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
-    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
-    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
-    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
-    0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    -0.05, 0.05, -0.358, 1, 1, 1, 0, 0, -1,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, -1,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, -1,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, -1,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, -1,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 0, -1,
 
     // Right
-    0.05, 0.05, -0.358, 1, 1, 1, -1, 0, 0,
-    0.05, -0.05, -0.358, 1, 1, 1, -1, 0, 0,
-    0.05, 0.05, -0.450, 1, 1, 1, -1, 0, 0,
-    0.05, 0.05, -0.450, 1, 1, 1, -1, 0, 0,
-    0.05, -0.05, -0.450, 1, 1, 1, -1, 0, 0,
-    0.05, -0.05, -0.358, 1, 1, 1, -1, 0, 0,
+    0.05, 0.05, -0.358, 1, 1, 1, 1, 0, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, 1, 0, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, 1, 0, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, 1, 0, 0,
+    0.05, -0.05, -0.450, 1, 1, 1, 1, 0, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, 1, 0, 0,
 
     // up
-    0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
-    0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
-    -0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
-    -0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
-    0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
-    -0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    -0.05, 0.05, -0.358, 1, 1, 1, 0, 1, 0,
 
     // Bottom
-    0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
-    0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
-    -0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
-    -0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
-    0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
-    -0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, -1, 0,
 ];
 
 const vertexShader = gl.createShader(gl.VERTEX_SHADER);
@@ -1168,4 +1168,117 @@ let modelMatrixMetal = glMatrix.mat4.create();
 
 document.addEventListener("keydown", onKeydown);
 
+function renderProgram(currShader, currVertice, isMetal) 
+{
+  gl.useProgram(currShader);
+  gl.enable(gl.DEPTH_TEST);
 
+  if (isMetal)
+  {
+    gl.uniformMatrix4fv(uViewMetal, false, viewMatrixMetal);
+  }
+  else
+  {
+    gl.uniformMatrix4fv(uView, false, viewMatrix);
+  }
+
+  const vertexBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(currVertice), gl.STATIC_DRAW);
+
+  const aPosition = gl.getAttribLocation(currShader, `aPosition`);
+  gl.enableVertexAttribArray(aPosition);
+  gl.vertexAttribPointer(
+    aPosition,
+    3,
+    gl.FLOAT,
+    false,
+    9 * Float32Array.BYTES_PER_ELEMENT,
+    0
+  );
+
+  const aColor = gl.getAttribLocation(currShader, `aColor`);
+  gl.enableVertexAttribArray(aColor);
+  gl.vertexAttribPointer(
+    aColor,
+    3,
+    gl.FLOAT,
+    false,
+    9 * Float32Array.BYTES_PER_ELEMENT,
+    3 * Float32Array.BYTES_PER_ELEMENT
+  );
+
+  const aNormal = gl.getAttribLocation(currShader, `aNormal`);
+  gl.enableVertexAttribArray(aNormal);
+  gl.vertexAttribPointer(
+    aNormal,
+    3,
+    gl.FLOAT,
+    false,
+    9 * Float32Array.BYTES_PER_ELEMENT,
+    6 * Float32Array.BYTES_PER_ELEMENT
+  );
+
+  // Lighting and Shading
+  // AMBIENT
+  let uAmbientConstant = gl.getUniformLocation(currShader, "uAmbientConstant");
+  let uAmbientIntensity = gl.getUniformLocation(currShader, "uAmbientIntensity");
+  gl.uniform3fv(uAmbientConstant, [1.0, 1.0, 1.0]);       // white light
+  gl.uniform1f(uAmbientIntensity, 0.386); // 20% of light
+
+  // DIFFUSE
+  let uDiffuseConstant = gl.getUniformLocation(currShader, "uDiffuseConstant");
+  let uNormalModel = gl.getUniformLocation(currShader, "uNormalModel");
+  gl.uniform3fv(uDiffuseConstant, [1.0, 1.0, 1.0]);   // white light
+  if (isMetal)
+    gl.uniform3fv(uLightPositionMetal, [lightX, lightY, lightZ]);  // light position
+  else
+    gl.uniform3fv(uLightPosition, [lightX, lightY, lightZ])
+
+  let uProjection = gl.getUniformLocation(currShader, "uProjection");
+  let perspectiveMatrix = glMatrix.mat4.create();
+  glMatrix.mat4.perspective(perspectiveMatrix, Math.PI / 3, 1.0, 0.5, 10.0);
+  gl.uniformMatrix4fv(uProjection, false, perspectiveMatrix);
+
+  // SPECULAR
+  var uSpecularConstant = gl.getUniformLocation(currShader, "uSpecularConstant");
+  var uViewerPosition = gl.getUniformLocation(currShader, "uViewerPosition");
+  gl.uniform3fv(uSpecularConstant, [1.0, 1.0, 1.0]);  // white light
+  gl.uniform3fv(uViewerPosition, [cameraX, cameraY, cameraZ]);
+
+  let uModel = gl.getUniformLocation(currShader, `uModel`);
+  
+  if (isMetal) 
+  {
+    glMatrix.mat4.rotateY(modelMatrixMetal, modelMatrixMetal, Math.PI / 2 / 70);
+
+    gl.uniformMatrix4fv(uModel, false, modelMatrixMetal);
+
+    let normalModelMatrix = glMatrix.mat3.create();
+    glMatrix.mat3.normalFromMat4(normalModelMatrix, modelMatrixMetal);
+    gl.uniformMatrix3fv(uNormalModel, false, normalModelMatrix);
+  } 
+  else 
+  {
+    glMatrix.mat4.rotateY(modelMatrix, modelMatrix, Math.PI / 2 / 70);
+    gl.uniformMatrix4fv(uModel, false, modelMatrix);
+    let normalModelMatrix = glMatrix.mat3.create();
+    glMatrix.mat3.normalFromMat4(normalModelMatrix, modelMatrix);
+    gl.uniformMatrix3fv(uNormalModel, false, normalModelMatrix);
+  }
+
+  gl.enable(gl.DEPTH_TEST);
+  gl.drawArrays(gl.TRIANGLES, 0, vertexData.length / 9);
+
+}
+
+function animate() {
+  gl.clearColor(0.0, 0.0, 0.0, 0.2);
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+  renderProgram(programMetal, vertexDataMetal, true);
+  renderProgram(program, vertexData, false);
+  requestAnimationFrame(animate);
+}
+
+animate();
