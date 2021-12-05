@@ -21,3 +21,11 @@
 
 ### Top Rear
 ![toprear](./screenshot/toprearc.jpg)
+
+### Chosen Picture 
+#### Left Picture
+<!-- ![top](./screenshot/top.jpg) -->
+![top](./screenshot/topc.jpg)
+
+#### Right Picture 
+![toprear](./screenshot/toprearc.jpg)
