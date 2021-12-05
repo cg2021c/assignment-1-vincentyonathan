@@ -5,7 +5,7 @@
 * Vincent Yonathan    - 05111940000186
 ---
 
-## Item's Name : Camera
+## Item's Name : Camera 3D
 ### Top Right
 ![topright](./screenshot/toprightc.jpg)
 
@@ -17,4 +17,13 @@
 ![top](./screenshot/topc.jpg)
 
 ### Top Rear
+![toprear](./screenshot/toprearc.jpg)
+
+
+### Chosen Picture 
+#### Left Picture
+<!-- ![top](./screenshot/top.jpg) -->
+![top](./screenshot/topc.jpg)
+
+#### Right Picture 
 ![toprear](./screenshot/toprearc.jpg)
