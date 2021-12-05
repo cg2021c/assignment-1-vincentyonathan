@@ -5,6 +5,10 @@
 * Vincent Yonathan    - 05111940000186
 ---
 
+## Branches
+* First Task - *main* branch
+* Second Task (3D) - *second3d* branch
+
 ## Item's Name : Camera 3D
 ### Top Right
 ![topright](./screenshot/toprightc.jpg)
