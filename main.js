@@ -913,36 +913,36 @@ vertexData = [
     -0.05, -0.05, -0.358, 1, 1, 1, -1, 0 ,0,
 
     // // Back
-    -0.05, 0.05, -0.358, 1, 1, 1, 0, 0, -1,
-    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, -1,
-    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, -1,
-    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, -1,
-    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, -1,
-    0.05, -0.05, -0.358, 1, 1, 1, 0, 0, -1,
+    -0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 0, 1,
 
     // Right
-    0.05, 0.05, -0.358, 1, 1, 1, 1, 0, 0,
-    0.05, -0.05, -0.358, 1, 1, 1, 1, 0, 0,
-    0.05, 0.05, -0.450, 1, 1, 1, 1, 0, 0,
-    0.05, 0.05, -0.450, 1, 1, 1, 1, 0, 0,
-    0.05, -0.05, -0.450, 1, 1, 1, 1, 0, 0,
-    0.05, -0.05, -0.358, 1, 1, 1, 1, 0, 0,
+    0.05, 0.05, -0.358, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, -1, 0, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.450, 1, 1, 1, -1, 0, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, -1, 0, 0,
 
     // up
-    0.05, 0.05, -0.358, 1, 1, 1, 0, 1, 0,
-    0.05, 0.05, -0.450, 1, 1, 1, 0, 1, 0,
-    -0.05, 0.05, -0.450, 1, 1, 1, 0, 1, 0,
-    -0.05, 0.05, -0.450, 1, 1, 1, 0, 1, 0,
-    0.05, 0.05, -0.358, 1, 1, 1, 0, 1, 0,
-    -0.05, 0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.450, 1, 1, 1, 0, -1, 0,
+    0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    -0.05, 0.05, -0.358, 1, 1, 1, 0, -1, 0,
 
     // Bottom
-    0.05, -0.05, -0.358, 1, 1, 1, 0, -1, 0,
-    0.05, -0.05, -0.450, 1, 1, 1, 0, -1, 0,
-    -0.05, -0.05, -0.450, 1, 1, 1, 0, -1, 0,
-    -0.05, -0.05, -0.450, 1, 1, 1, 0, -1, 0,
-    0.05, -0.05, -0.358, 1, 1, 1, 0, -1, 0,
-    -0.05, -0.05, -0.358, 1, 1, 1, 0, -1, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.450, 1, 1, 1, 0, 1, 0,
+    0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
+    -0.05, -0.05, -0.358, 1, 1, 1, 0, 1, 0,
 ];
 
 const vertexShader = gl.createShader(gl.VERTEX_SHADER);
@@ -1088,7 +1088,7 @@ gl.linkProgram(programMetal);
 
 let lightX = 0.0;
 let lightY = 0.0;
-let lightZ = -0.404;
+let lightZ = -0.200;
 
 let cameraX = 0.0;
 let cameraY = 0.0;
@@ -1119,8 +1119,8 @@ glMatrix.mat4.lookAt(
 gl.uniformMatrix4fv(uViewMetal, false, viewMatrixMetal);
 
 function onKeydown(event) {
-  if (event.keyCode == 65) cameraX -= 0.02; // Left
-  if (event.keyCode == 68) cameraX += 0.02; // Right
+  if (event.keyCode == 65) cameraX += 0.02; // Left
+  if (event.keyCode == 68) cameraX -= 0.02; // Right
 
   if (event.keyCode == 87) {
     lightY += 0.02; // Up 
@@ -1147,6 +1147,11 @@ function onKeydown(event) {
         vertexDataMetal[i + 1] -= 0.02;
       }
     }
+  }
+  if(event.keyCode == 32)
+  {
+    glMatrix.mat4.rotateY(modelMatrixMetal, modelMatrixMetal, Math.PI / 2 / 70);
+    glMatrix.mat4.rotateY(modelMatrix, modelMatrix, Math.PI / 2 / 70);
   }
 
   glMatrix.mat4.lookAt(
@@ -1250,7 +1255,7 @@ function renderProgram(currShader, currVertice, isMetal)
   
   if (isMetal) 
   {
-    glMatrix.mat4.rotateY(modelMatrixMetal, modelMatrixMetal, Math.PI / 2 / 70);
+    //glMatrix.mat4.rotateY(modelMatrixMetal, modelMatrixMetal, Math.PI / 2 / 70);
 
     gl.uniformMatrix4fv(uModel, false, modelMatrixMetal);
 
@@ -1260,7 +1265,7 @@ function renderProgram(currShader, currVertice, isMetal)
   } 
   else 
   {
-    glMatrix.mat4.rotateY(modelMatrix, modelMatrix, Math.PI / 2 / 70);
+    //glMatrix.mat4.rotateY(modelMatrix, modelMatrix, Math.PI / 2 / 70);
     gl.uniformMatrix4fv(uModel, false, modelMatrix);
     let normalModelMatrix = glMatrix.mat3.create();
     glMatrix.mat3.normalFromMat4(normalModelMatrix, modelMatrix);

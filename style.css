@@ -10,3 +10,15 @@
     border: 1px solid black;
     background-color: antiquewhite;
 }
+
+.layout
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.command
+{
+    padding: 40px;
+    font-size: large;
+}
