@@ -6,7 +6,7 @@
 ---
 ## Branches
 * First Task - *main* branch
-* Second Task (3D) - *second3d* branch and hackathon
+* Second Task (3D) - *second3d* branch or open index3d.html with main3d.js
 
 ## Item's Name : Camera
 ### Top Right
