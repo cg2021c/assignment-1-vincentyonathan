@@ -1,0 +1,38 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Assignment - Computer Graphics C- 0186</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+    <script src="gl-matrix-min.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <h1>
+        Computer Graphics Task 2 - Vincent Yonathan - 05111940000186
+    </h1>
+    <div class="layout">
+        <canvas class="MyCanvas"></canvas>
+        <div class="command">
+            Command List <br><br>
+            <li>W - Move the middle cube to upright position</li><br>
+            <li>S - Move the middle cube to downright position</li><br>
+            <li>A - Move the frame to left position</li><br>
+            <li>D - Move the frame to right position</li><br>
+            <li>SPACE(HOLD) - Start/Stop Spinning [For Automatic Spinning, just uncomment the line 1258 and 1268]</li><br>
+            <li>The Left object is Camera with plastic specular effect </li><br>
+            <li>The Right object is Camera with Metal specular effect </li>
+        </div>
+    </div>
+    <script>
+        const _c = document.getElementsByClassName('MyCanvas')[0];
+        _c.width = window.innerWidth;
+        _c.height = window.innerHeight;
+    </script>
+</body>
+
+</html>
