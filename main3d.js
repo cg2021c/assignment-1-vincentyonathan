@@ -1118,60 +1118,8 @@ glMatrix.mat4.lookAt(
 );
 gl.uniformMatrix4fv(uViewMetal, false, viewMatrixMetal);
 
-function onKeydown(event) {
-  if (event.keyCode == 65) cameraX += 0.02; // Left
-  if (event.keyCode == 68) cameraX -= 0.02; // Right
-
-  if (event.keyCode == 87) {
-    lightY += 0.02; // Up 
-    for (let i = 0; i < vertexData.length; i += 9) {
-      if (vertexData[i] <= 0.05 && vertexData[i] >= -0.05 && vertexData[i + 2] <= 0.05 && vertexData[i + 2] >= -0.05) {
-        vertexData[i + 1] += 0.02;
-      }
-    }
-    for (let i = 0; i < vertexDataMetal.length; i += 9) {
-      if (vertexDataMetal[i] <= 0.05 && vertexDataMetal[i] >= -0.05 && vertexDataMetal[i + 2] <= 0.05 && vertexDataMetal[i + 2] >= -0.05) {
-        vertexDataMetal[i + 1] += 0.02;
-      }
-    }
-  }
-  if (event.keyCode == 83) {
-    lightY -= 0.02; // Down
-    for (let i = 0; i < vertexData.length; i += 9) {
-      if (vertexData[i] <= 0.05 && vertexData[i] >= -0.05 && vertexData[i + 2] <= 0.05 && vertexData[i + 2] >= -0.05) {
-        vertexData[i + 1] -= 0.02;
-      }
-    }
-    for (let i = 0; i < vertexDataMetal.length; i += 9) {
-      if (vertexDataMetal[i] <= 0.05 && vertexDataMetal[i] >= -0.05 && vertexDataMetal[i + 2] <= 0.05 && vertexDataMetal[i + 2] >= -0.05) {
-        vertexDataMetal[i + 1] -= 0.02;
-      }
-    }
-  }
-  if(event.keyCode == 32)
-  {
-    glMatrix.mat4.rotateY(modelMatrixMetal, modelMatrixMetal, Math.PI / 2 / 70);
-    glMatrix.mat4.rotateY(modelMatrix, modelMatrix, Math.PI / 2 / 70);
-  }
-
-  glMatrix.mat4.lookAt(
-    viewMatrix,
-    [cameraX, cameraY, cameraZ],    // the location of the eye or the camera
-    [cameraX, 0.0, -10],        // the point where the camera look at
-    [0.0, 1.0, 0.0]
-  );
-  glMatrix.mat4.lookAt(
-    viewMatrixMetal,
-    [cameraX, cameraY, cameraZ],    // the location of the eye or the camera
-    [cameraX, 0.0, -10],        // the point where the camera look at
-    [0.0, 1.0, 0.0]
-  );
-}
-
 let modelMatrix = glMatrix.mat4.create();
 let modelMatrixMetal = glMatrix.mat4.create();
-
-document.addEventListener("keydown", onKeydown);
 
 function renderProgram(currShader, currVertice, isMetal) 
 {
@@ -1255,8 +1203,6 @@ function renderProgram(currShader, currVertice, isMetal)
   
   if (isMetal) 
   {
-    //glMatrix.mat4.rotateY(modelMatrixMetal, modelMatrixMetal, Math.PI / 2 / 70);
-
     gl.uniformMatrix4fv(uModel, false, modelMatrixMetal);
 
     let normalModelMatrix = glMatrix.mat3.create();
@@ -1265,7 +1211,6 @@ function renderProgram(currShader, currVertice, isMetal)
   } 
   else 
   {
-    //glMatrix.mat4.rotateY(modelMatrix, modelMatrix, Math.PI / 2 / 70);
     gl.uniformMatrix4fv(uModel, false, modelMatrix);
     let normalModelMatrix = glMatrix.mat3.create();
     glMatrix.mat3.normalFromMat4(normalModelMatrix, modelMatrix);
