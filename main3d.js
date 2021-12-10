@@ -1134,8 +1134,20 @@ glMatrix.mat4.lookAt(
 );
 gl.uniformMatrix4fv(uViewMetal, false, viewMatrixMetal);
 
+let lightsOn = true
+
+function onKeydown(event) {
+  if(event.keyCode == 32 )
+  {
+    lightsOn = !lightsOn
+  }
+}
+
+
 let modelMatrix = glMatrix.mat4.create();
 let modelMatrixMetal = glMatrix.mat4.create();
+
+document.addEventListener("keydown", onKeydown);
 
 function renderProgram(currShader, currVertice, isMetal) 
 {
@@ -1198,11 +1210,30 @@ function renderProgram(currShader, currVertice, isMetal)
   // DIFFUSE
   let uDiffuseConstant = gl.getUniformLocation(currShader, "uDiffuseConstant");
   let uNormalModel = gl.getUniformLocation(currShader, "uNormalModel");
-  gl.uniform3fv(uDiffuseConstant, [1.0, 1.0, 1.0]);   // white light
   if (isMetal)
+  {
+    if(lightsOn == true)
+    {
+      gl.uniform3fv(uDiffuseConstant, [1.0, 1.0, 1.0]);   // white light
+    }
+    else
+    {
+      gl.uniform3fv(uDiffuseConstant, [0.0, 0.0, 0.0]);   // no light
+    }
     gl.uniform3fv(uLightPositionMetal, [lightX, lightY, lightZ]);  // light position
+  }
   else
+  {
+    if(lightsOn == true)
+    {
+      gl.uniform3fv(uDiffuseConstant, [1.0, 1.0, 1.0]);   // white light
+    }
+    else
+    {
+      gl.uniform3fv(uDiffuseConstant, [0.0, 0.0, 0.0]);   // no light
+    }
     gl.uniform3fv(uLightPosition, [lightX, lightY, lightZ])
+  }
 
   let uProjection = gl.getUniformLocation(currShader, "uProjection");
   let perspectiveMatrix = glMatrix.mat4.create();
@@ -1212,7 +1243,14 @@ function renderProgram(currShader, currVertice, isMetal)
   // SPECULAR
   var uSpecularConstant = gl.getUniformLocation(currShader, "uSpecularConstant");
   var uViewerPosition = gl.getUniformLocation(currShader, "uViewerPosition");
-  gl.uniform3fv(uSpecularConstant, [1.0, 1.0, 1.0]);  // white light
+  if(lightsOn == true)
+  {
+    gl.uniform3fv(uSpecularConstant, [1.0, 1.0, 1.0]);  // white light
+  }
+  else
+  {
+    gl.uniform3fv(uSpecularConstant, [0.0, 0.0, 0.0]);  // white ligh
+  }
   gl.uniform3fv(uViewerPosition, [cameraX, cameraY, cameraZ]);
 
   let uModel = gl.getUniformLocation(currShader, `uModel`);
