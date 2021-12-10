@@ -1092,6 +1092,41 @@ gl.uniformMatrix4fv(uViewMetal, false, viewMatrixMetal);
 
 let modelMatrix = glMatrix.mat4.create();
 let modelMatrixMetal = glMatrix.mat4.create();
+var rotationMatrix = glMatrix.mat4.create();
+  var dragging;
+  function onMouseDown(event) {
+      var x = event.clientX;
+      var y = event.clientY;
+      var rect = event.target.getBoundingClientRect();
+      // When the mouse pointer is inside the frame
+      if (
+          rect.left <= x &&
+          rect.right >= x &&
+          rect.top <= y &&
+          rect.bottom >= y
+      ) {
+          dragging = true;
+      }
+      lastPointOnTrackBall = getProjectionPointOnSurface(glMatrix.vec3.fromValues(x, y, 0));
+      currentPointOnTrackBall = lastPointOnTrackBall;
+  }
+  function onMouseUp(event) {
+      dragging = false;
+      if (currentPointOnTrackBall != lastPointOnTrackBall) {
+          lastQuat = computeCurrentQuat();
+      }
+  }
+  function onMouseMove(event) {
+      if (dragging) {
+          var x = event.clientX;
+          var y = event.clientY;
+          currentPointOnTrackBall = getProjectionPointOnSurface(glMatrix.vec3.fromValues(x, y, 0));
+          glMatrix.mat4.fromQuat(rotationMatrix, computeCurrentQuat());
+      }
+  }
+  document.addEventListener('mousedown', onMouseDown);
+  document.addEventListener('mouseup', onMouseUp);
+  document.addEventListener('mousemove', onMouseMove);
 
 let lightsOn = true
 
@@ -1135,6 +1170,28 @@ function onKeydown(event) {
     {
       cubeVertex[i]+=0.02;
     }
+  }
+
+  function rotate(cx, cy, x, y, angle) {
+    var radians = (Math.PI / 180) * angle,
+      cos = Math.cos(radians),
+      sin = Math.sin(radians),
+      nx = (cos * (x - cx)) + (sin * (y - cy)) + cx,
+      ny = (cos * (y - cy)) - (sin * (x - cx)) + cy;
+    return [nx, ny];
+  }
+
+  if(event.keyCode == 37)
+  {
+    var cameraXZ = rotate(0.0, 0.0, cameraX, cameraZ, -5);
+    cameraX = cameraXZ[0];
+    cameraZ = cameraXZ[1];
+  }
+  if(event.keyCode == 39)
+  {
+    var cameraXZ = rotate(0.0, 0.0, cameraX, cameraZ, 5);
+    cameraX = cameraXZ[0];
+    cameraZ = cameraXZ[1];
   }
 
   vertexDataGabung = [...vertexData,...cubeVertex];
@@ -1242,10 +1299,39 @@ function renderProgram(currShader, currVertice, isMetal)
     gl.uniform3fv(uLightPosition, [lightX, lightY, lightZ])
   }
 
-  let uProjection = gl.getUniformLocation(currShader, "uProjection");
-  let perspectiveMatrix = glMatrix.mat4.create();
-  glMatrix.mat4.perspective(perspectiveMatrix, Math.PI / 3, 1.0, 0.5, 10.0);
+  // Perspective projection
+  var uProjection = gl.getUniformLocation(currShader, "uProjection");
+  var perspectiveMatrix = glMatrix.mat4.create();
+  glMatrix.mat4.perspective(perspectiveMatrix, Math.PI/3, 1.0, 0.5, 10.0);
   gl.uniformMatrix4fv(uProjection, false, perspectiveMatrix);
+
+  // Interactive orbital rotation with mouse using quaternion concept
+  var lastPointOnTrackBall, currentPointOnTrackBall;
+  var lastQuat = glMatrix.quat.create();
+  function computeCurrentQuat() {
+      // Secara berkala hitung quaternion rotasi setiap ada perubahan posisi titik pointer mouse
+      var axisFromCrossProduct = glMatrix.vec3.cross(glMatrix.vec3.create(), lastPointOnTrackBall, currentPointOnTrackBall);
+      var angleFromDotProduct = Math.acos(glMatrix.vec3.dot(lastPointOnTrackBall, currentPointOnTrackBall));
+      var rotationQuat = glMatrix.quat.setAxisAngle(glMatrix.quat.create(), axisFromCrossProduct, angleFromDotProduct);
+      glMatrix.quat.normalize(rotationQuat, rotationQuat);
+      return glMatrix.quat.multiply(glMatrix.quat.create(), rotationQuat, lastQuat);
+  }
+  // Memproyeksikan pointer mouse agar jatuh ke permukaan ke virtual trackball
+  function getProjectionPointOnSurface(point) {
+      var radius = canvas.width/3;  // Jari-jari virtual trackball kita tentukan sebesar 1/3 lebar kanvas
+      var center = glMatrix.vec3.fromValues(canvas.width/2, canvas.height/2, 0);  // Titik tengah virtual trackball
+      var pointVector = glMatrix.vec3.subtract(glMatrix.vec3.create(), point, center);
+      pointVector[1] = pointVector[1] * (-1); // Flip nilai y, karena koordinat piksel makin ke bawah makin besar
+      var radius2 = radius * radius;
+      var length2 = pointVector[0] * pointVector[0] + pointVector[1] * pointVector[1];
+      if (length2 <= radius2) pointVector[2] = Math.sqrt(radius2 - length2); // Dapatkan nilai z melalui rumus Pytagoras
+      else {  // Atur nilai z sebagai 0, lalu x dan y sebagai paduan Pytagoras yang membentuk sisi miring sepanjang radius
+          pointVector[0] *= radius / Math.sqrt(length2);
+          pointVector[1] *= radius / Math.sqrt(length2);
+          pointVector[2] = 0;
+      }
+      return glMatrix.vec3.normalize(glMatrix.vec3.create(), pointVector);
+  }
 
   // SPECULAR
   var uSpecularConstant = gl.getUniformLocation(currShader, "uSpecularConstant");
