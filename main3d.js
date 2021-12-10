@@ -1350,14 +1350,17 @@ function renderProgram(currShader, currVertice, isMetal)
   
   if (isMetal) 
   {
+    var modelMatrix = glMatrix.mat4.create();
+    glMatrix.mat4.multiply(modelMatrix, modelMatrix, rotationMatrix);
     gl.uniformMatrix4fv(uModel, false, modelMatrixMetal);
-
     let normalModelMatrix = glMatrix.mat3.create();
     glMatrix.mat3.normalFromMat4(normalModelMatrix, modelMatrixMetal);
     gl.uniformMatrix3fv(uNormalModel, false, normalModelMatrix);
   } 
   else 
   {
+    var modelMatrix = glMatrix.mat4.create();
+    glMatrix.mat4.multiply(modelMatrix, modelMatrix, rotationMatrix);
     gl.uniformMatrix4fv(uModel, false, modelMatrix);
     let normalModelMatrix = glMatrix.mat3.create();
     glMatrix.mat3.normalFromMat4(normalModelMatrix, modelMatrix);
