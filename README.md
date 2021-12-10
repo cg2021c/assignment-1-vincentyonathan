@@ -7,7 +7,7 @@
 
 ## Branches
 * First Task - *main* branch
-* Second Task (3D) - *second3d* branch
+* Second Task (3D) - *second3d* branch and Hackathon
 
 ## Item's Name : Camera 3D
 ### Top Right
